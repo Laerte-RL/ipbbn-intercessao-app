@@ -54,9 +54,9 @@ function addRequest () {
         </div>
 
         <div class="p-4">
-          <TransitionGroup name="list" tag="ul">
+          <TransitionGroup name="list" tag="ul" class="list-none">
             <li v-for="(participant, index) of participantsOrdered" :key="participant.name">
-              <div :class="participant.prayed ? 'border-green-800' : 'border-red-500'" class="bg-white border-l-8 px-3 py-2 mb-4 rounded-md">
+              <div :class="participant.prayed ? 'border-green-800' : 'border-red-500'" class="bg-white border-l-8 px-3 py-2 rounded-md">
                 <div class="flex justify-between items-center border-b mb-2">
                   <h3 class="capitalize text-xl font-bold py-1">
                     {{ participant.name }}
@@ -69,6 +69,12 @@ function addRequest () {
                   </div>
                 </div>
                 <p class="py-2 text-gray-600">{{ participant.request }}</p>
+              </div>
+              <div v-if="participants[index + 1]" class="my-4 flex items-center gap-2">
+                <svg style="display:inline-block;" width="1.2em" height="1.2em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 16 16" class="transform rotate-90 opacity-30"><path fill="currentColor" fill-rule="evenodd" d="M10.5 7.75a2.5 2.5 0 1 1-5 0a2.5 2.5 0 0 1 5 0zm1.43.75a4.002 4.002 0 0 1-7.86 0H.75a.75.75 0 1 1 0-1.5h3.32a4.001 4.001 0 0 1 7.86 0h3.32a.75.75 0 1 1 0 1.5h-3.32z"></path></svg>
+                <div>
+                  <span class="bg-green-800 px-3 py-1 text-white rounded-md">{{ participant.name }}</span> <span class="opacity-50 px-2">vai orar pela irmã/o</span> <span class="bg-green-800 px-3 py-1 text-white rounded-md">{{ participants[index + 1].name }}</span>
+                </div>
               </div>
             </li>
           </TransitionGroup>
