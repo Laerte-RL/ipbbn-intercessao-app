@@ -1,3 +1,17 @@
-# Grupo Oração
+# IPBBN Intercessão App
 
-A ideia do projeto é organizar a seguência das orações
+Aplicativo de Intercessão da Igreja Presbiteriana Brasileira Boas Novas
+
+# Uso
+
+Instale as dependências
+
+```
+$ yarn
+```
+
+Inicie o projeto
+
+```
+$ yarn dev
+```
